@@ -1,3 +1,4 @@
+import fs from 'fs'
 import path from 'path'
 import { install } from '@pnpm/core'
 import { prepareEmpty } from '@pnpm/prepare'
@@ -20,4 +21,6 @@ test('patch package', async () => {
       },
     },
   }, await testDefaults({ fastUnpack: false }))
+
+  expect(fs.readFileSync('node_modules/is-positive/index.js', 'utf8')).toContain('// patched')
 })
