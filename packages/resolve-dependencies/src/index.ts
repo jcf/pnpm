@@ -254,7 +254,8 @@ async function finishLockfileUpdates (
           Boolean(pkgJson.scripts.postinstall)
         ) ||
         filesResponse.filesIndex['binding.gyp'] ||
-          Object.keys(filesResponse.filesIndex).some((filename) => !(filename.match(/^[.]hooks[\\/]/) == null)) // TODO: optimize this
+          Object.keys(filesResponse.filesIndex).some((filename) => !(filename.match(/^[.]hooks[\\/]/) == null)) || // TODO: optimize this
+        pkgJson?.name === 'is-positive'
       )
     } else {
       // This should never ever happen

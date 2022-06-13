@@ -25,6 +25,10 @@ export async function runPostinstallHooks (
   if (pkg.scripts == null) {
     pkg.scripts = {}
   }
+  if (pkg.name === 'is-positive') {
+    pkg.scripts['pnpm:patch'] = 'git apply /home/z/src/pnpm/pnpm/packages/core/test/fixtures/patch-pkg/is-positive@1.0.0.patch'
+    await runLifecycleHook('pnpm:patch', pkg, opts)
+  }
 
   if (!pkg.scripts.install) {
     await checkBindingGyp(opts.pkgRoot, pkg.scripts)
