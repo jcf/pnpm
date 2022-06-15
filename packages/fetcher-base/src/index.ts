@@ -24,6 +24,7 @@ export type PackageFilesResponse = {
 export type ImportPackageFunction = (
   to: string,
   opts: {
+    patchPath?: string
     targetEngine?: string
     filesResponse: PackageFilesResponse
     force: boolean

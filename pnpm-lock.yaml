@@ -1928,6 +1928,7 @@ importers:
       '@types/ramda': 0.27.39
       '@types/ssri': ^7.1.0
       '@zkochan/rimraf': ^2.1.2
+      dependency-path: workspace:^9.1.3
       load-json-file: ^6.2.0
       ramda: ^0.27.1
       ssri: ^8.0.1
@@ -1942,6 +1943,7 @@ importers:
       '@pnpm/store-controller-types': link:../store-controller-types
       '@pnpm/types': link:../types
       '@zkochan/rimraf': 2.1.2
+      dependency-path: link:../dependency-path
       load-json-file: 6.2.0
       ramda: 0.27.2
       ssri: 8.0.1

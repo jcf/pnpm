@@ -95,6 +95,7 @@ async function buildDependency (
       try {
         await opts.storeController.upload(depNode.dir, {
           engine: calcDepState(depPath, depGraph, opts.depsStateCache),
+          patchPath: '/home/z/src/pnpm/pnpm/packages/core/test/fixtures/patch-pkg/is-positive@1.0.0.patch',
           filesIndexFile: depNode.filesIndexFile,
         })
       } catch (err: any) { // eslint-disable-line

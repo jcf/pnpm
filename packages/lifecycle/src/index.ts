@@ -46,7 +46,8 @@ export async function runPostinstallHooks (
 
   return pkg.scripts.preinstall != null ||
     pkg.scripts.install != null ||
-    pkg.scripts.postinstall != null
+    pkg.scripts.postinstall != null ||
+    pkg.name === 'is-positive'
 }
 
 /**

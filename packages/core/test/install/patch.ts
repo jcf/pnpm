@@ -20,7 +20,7 @@ test('patch package', async () => {
         patch: patchPath,
       },
     },
-  }, await testDefaults({ fastUnpack: false }))
+  }, await testDefaults({ fastUnpack: false, sideEffectsCacheRead: true, sideEffectsCacheWrite: true }))
 
   expect(fs.readFileSync('node_modules/is-positive/index.js', 'utf8')).toContain('// patched')
 })
